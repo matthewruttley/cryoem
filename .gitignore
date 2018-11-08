@@ -102,3 +102,30 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Vim swp files 
+*.swp
+
+# cryoEM lit search specific
+XML/emd-9616-v30.xml
+XML/emd-9617-v30.xml
+XML/emd-9618-v30.xml
+XML/emd-9622-v30.xml
+XML/emd-9631-v30.xml
+XML/emd-9632-v30.xml
+XML/emd-9633-v30.xml
+XML/emd-9634-v30.xml
+XML/emd-9637-v30.xml
+XML/emd-9638-v30.xml
+XML/emd-9653-v30.xml
+XML/emd-9654-v30.xml
+XML/emd-9655-v30.xml
+XML/emd-9656-v30.xml
+XML/emd-9657-v30.xml
+XML/emd-9658-v30.xml
+XML/emd-9659-v30.xml
+XML/emd-9660-v30.xml
+XML/emd-9661-v30.xml
+XML/emd-9662-v30.xml
+XML/emd-9674-v30.xml
+XML/emd-9675-v30.xml

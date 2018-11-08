@@ -19,14 +19,10 @@ import os
 
 import xmltodict
 
-useful_fields = [
-  ['admin_date', ['emd', 'admin', 'current_status', 'date']],
-  ['admin_date', ['emd', 'admin', 'current_status', 'date']],
-  ['grid', ['emd', 'structure_determination_list', 'structure_determination', 'specimen_preparation_list', 'single_particle_preparation', 'grid', 'model']],
-  ['grid_material', ['emd', 'structure_determination_list', 'structure_determination', 'specimen_preparation_list', 'single_particle_preparation', 'grid', 'material']],
-  ['admin_date', ['emd', 'admin', 'current_status', 'date']],
-  # Add cols to pick out here'
-]
+from searchterms import searchterms
+
+useful_fields=searchterms.get_list_of_search_terms()
+
 def get_value(d, path):
   if len(path) == 1:
     return d[path[0]]
