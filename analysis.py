@@ -44,7 +44,6 @@ def build_analysis():
         for col_name, path in useful_fields:
           try:
             values.append(get_value(contents, path))
-            print(values)
           except KeyError:
             values.append("NULL") 
         xml_data[fn] = values

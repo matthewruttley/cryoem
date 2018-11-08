@@ -31,6 +31,18 @@ def get_list_of_search_terms():
     ['calibrated_magnification', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'calibrated_magnification']],
     ['specimen_holder_model', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'specimen_holder_model']],
     # Image recording
-  # Add cols to pick out here'
+    ['detector', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'image_recording_list', 'image_recording', 'film_or_detector_model']],
+    ['detector_mode', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'image_recording_list', 'image_recording', 'detector_mode']],
+    ['average_exposure_time', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'image_recording_list', 'image_recording', 'average_exposure_time']],
+    ['electron_exposure', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'image_recording_list', 'image_recording', 'average_electron_dose_per_image']],
+    # Programs - CTF estimation
+    ['CTF_estimation_program', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'ctf_correction', 'software_list', 'software', 'name']],
+    ['CTF_estimation_program_version', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'ctf_correction', 'software_list', 'software', 'version']],
+    # Symmetry
+    ['3D_classification_classes', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'number_classes_used']],
+    ['symmetry_point_group', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'applied_symmetry', 'point_group']],
+    ['Resolution', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'resolution']],
+    # Programs - refinement
+    
   ]
   return useful_fields

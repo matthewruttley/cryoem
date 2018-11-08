@@ -26,7 +26,17 @@ CREATE TABLE IF NOT EXISTS cryo.xml_files
   nominal_defocus_min DECIMAL,
   nominal_defocus_max DECIMAL,
   calibrated_magnification DECIMAL,
-  specimen_holder_model VARCHAR
+  specimen_holder_model VARCHAR,
+  detector VARCHAR,  
+  detector_mode VARCHAR,
+  average_exposure_time DECIMAL,
+  electron_exposure DECIMAL,
+  CTF_estimation_program VARCHAR,
+  CTF_estimation_program_version DECIMAL,
+  3D_classification_classes INT,
+  symmetry_point_group VARCHAR,
+  Resolution DECIMAL  
+  
 );
 
 CREATE INDEX cryo_name on cryo.xml_files (filename);
