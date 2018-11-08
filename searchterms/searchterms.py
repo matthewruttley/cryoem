@@ -42,7 +42,16 @@ def get_list_of_search_terms():
     ['3D_classification_classes', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'number_classes_used']],
     ['symmetry_point_group', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'applied_symmetry', 'point_group']],
     ['Resolution', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'resolution']],
+    ['resolution_est_method', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'resolution_method']],
     # Programs - refinement
-    
+    ['refinement_program', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'software_list', 'software', 'name']],
+    ['refinement_program_version', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'software_list', 'software', 'version']],
+    # Programs - refinement assignment 
+    ['Refinement_type', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'initial_angle_assignment', 'type']],
+    ['map_size', ['emd', 'map', 'dimensions', 'col']],
+    ['voxel_density_min', ['emd', 'map', 'statistics', 'minimum']],
+    ['voxel_density_max', ['emd', 'map', 'statistics', 'maximum']],
+    ['voxel_density_avg', ['emd', 'map', 'statistics', 'average']],
+    ['voxel_density_std', ['emd', 'map', 'statistics', 'std']],
   ]
   return useful_fields

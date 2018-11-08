@@ -35,7 +35,16 @@ CREATE TABLE IF NOT EXISTS cryo.xml_files
   CTF_estimation_program_version DECIMAL,
   3D_classification_classes INT,
   symmetry_point_group VARCHAR,
-  Resolution DECIMAL  
+  Resolution DECIMAL,
+  resolution_est_method VARCHAR,
+  refinement_program VARCHAR,
+  refinement_program_version DECIMAL,
+  Refinement_type VARCHAR,
+  map_size INT,
+  voxel_density_min INT,
+  voxel_density_max INT,
+  voxel_density_avg INT,
+  voxel_density_std INT
   
 );
 
