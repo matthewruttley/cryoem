@@ -1,10 +1,10 @@
 /* CRYO FILE ANALYSIS */
 
-CREATE SCHEMA IF NOT EXISTS cryo.xml_files;
+CREATE SCHEMA IF NOT EXISTS xml_files;
 
-DROP TABLE IF EXISTS cryo.xml_files;
+DROP TABLE IF EXISTS xml_files;
 
-CREATE TABLE IF NOT EXISTS cryo.xml_files
+CREATE TABLE IF NOT EXISTS xml_files
 (
   -- Put field types here
   filename VARCHAR,
@@ -25,8 +25,6 @@ CREATE TABLE IF NOT EXISTS cryo.xml_files
   nominal_defocus_max DECIMAL,
   calibrated_magnification DECIMAL,
   specimen_holder_model VARCHAR,
-  detector VARCHAR,  
-  detector_mode VARCHAR,
   average_exposure_time DECIMAL,
   electron_exposure DECIMAL,
   CTF_estimation_program VARCHAR,
@@ -46,6 +44,6 @@ CREATE TABLE IF NOT EXISTS cryo.xml_files
   
 );
 
-CREATE INDEX cryo_name on cryo.xml_files (filename);
+CREATE INDEX cryo_name on xml_files (filename);
 
-INSERT INTO cryo.xml_files VALUES
+INSERT INTO xml_files VALUES

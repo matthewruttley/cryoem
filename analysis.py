@@ -24,7 +24,6 @@ from searchterms import searchterms
 useful_fields=searchterms.get_list_of_search_terms()
 
 def get_value(d, path, f):
-  print(f)
   try:
     if len(path) == 1:
       return d[path[0]]
