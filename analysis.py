@@ -24,10 +24,14 @@ from searchterms import searchterms
 useful_fields=searchterms.get_list_of_search_terms()
 
 def get_value(d, path, f):
-  if len(path) == 1:
-    return d[path[0]]
-  else:
-    return get_value(d[path[0]], path[1:], f)
+  print(f)
+  try:
+    if len(path) == 1:
+      return d[path[0]]
+    else:
+      return get_value(d[path[0]], path[1:], f)
+  except TypeError:
+    pass
 
 def build_analysis():
   """handler"""
@@ -56,10 +60,13 @@ def build_analysis():
     # Hackish implementation here:
     inserts = ""
     for x in vals:
-      if isinstance(x, basestring):
-        inserts += "'{}', ".format(x.replace("'", ""))
-      else:
-        inserts += "{}, ".format(x) # numbers
+      try:
+        if isinstance(x, basestring):
+          inserts += "'{}', ".format(x.replace("'", ""))
+        else:
+          inserts += "{}, ".format(x) # numbers
+      except UnicodeEncodeError:
+        pass
     sql += "('{}', {}),".format(fn, inserts[:-2])
     
   sql = sql[:-1] + '\n;'
