@@ -23,12 +23,11 @@ from searchterms import searchterms
 
 useful_fields=searchterms.get_list_of_search_terms()
 
-def get_value(d, path):
+def get_value(d, path, f):
   if len(path) == 1:
     return d[path[0]]
   else:
-    return get_value(d[path[0]], path[1:])
-
+    return get_value(d[path[0]], path[1:], f)
 
 def build_analysis():
   """handler"""
@@ -43,8 +42,8 @@ def build_analysis():
         values = []
         for col_name, path in useful_fields:
           try:
-            values.append(get_value(contents, path))
-          except KeyError:
+            values.append(get_value(contents, path, f))
+          except KeyError, TypeError:
             values.append("NULL") 
         xml_data[fn] = values
   
