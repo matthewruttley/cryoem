@@ -21,9 +21,12 @@ import xmltodict
 
 useful_fields = [
   ['admin_date', ['emd', 'admin', 'current_status', 'date']],
-  # Add cols to pick out here
+  ['admin_date', ['emd', 'admin', 'current_status', 'date']],
+  ['grid', ['emd', 'structure_determination_list', 'structure_determination', 'specimen_preparation_list', 'single_particle_preparation', 'grid', 'model']],
+  ['grid_material', ['emd', 'structure_determination_list', 'structure_determination', 'specimen_preparation_list', 'single_particle_preparation', 'grid', 'material']],
+  ['admin_date', ['emd', 'admin', 'current_status', 'date']],
+  # Add cols to pick out here'
 ]
-
 def get_value(d, path):
   if len(path) == 1:
     return d[path[0]]
@@ -37,14 +40,17 @@ def build_analysis():
   xml_data = {}
   
   for fn in os.listdir('XML'):
-    if 'v30' in fn:
+    if 'swp' not in fn:
       with open('XML/' + fn) as f:
         contents = xmltodict.parse(f.read())
 
         values = []
         for col_name, path in useful_fields:
-          values.append(get_value(contents, path))
-
+          try:
+            values.append(get_value(contents, path))
+            print(values)
+          except KeyError:
+            values.append("NULL") 
         xml_data[fn] = values
   
   # Convert to SQL
