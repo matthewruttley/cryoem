@@ -1,13 +1,27 @@
 """
-  Analyze XML files
+  analysis
+  ~~~~~~~~~~~~
+  Gets specific fields from an XML file and saves
+  them to a SQL file.
+
+  Usage:
+    - Modify the SQL/xml_data.sql file to have fields and datatypes
+    that match the useful_fields list below
+    - Expand the useful_fields list below to have the keys you want
+    - Run analysis.py
+    - run psql -f output.sql
+    - Inspect in DB
+
 """
 
 from collections import defaultdict
+import os
 
-from converter import xml_to_json # todo find module
+import xmltodict
 
 useful_fields = [
-  ['admin_date', ['emd', 'admin', 'current_status', 'date']]
+  ['admin_date', ['emd', 'admin', 'current_status', 'date']],
+  # Add cols to pick out here
 ]
 
 def get_value(d, path):
@@ -25,10 +39,10 @@ def build_analysis():
   for fn in os.listdir('XML'):
     if 'v30' in fn:
       with open('XML/' + fn) as f:
-        contents = xml_to_json(f.read())
+        contents = xmltodict.parse(f.read())
 
         values = []
-        for col_name, path in useful_fields.iteritems():
+        for col_name, path in useful_fields:
           values.append(get_value(contents, path))
 
         xml_data[fn] = values
@@ -38,13 +52,21 @@ def build_analysis():
     sql = f.read()
 
   for fn, vals in xml_data.iteritems():
-    vals = tuple([fn] + vals)
-    sql += '{},'.format(repr(tuple)) # Check that this works with no unicode errors
-  sql = sql[:-1] + ';'
+
+    # Hackish implementation here:
+    inserts = ""
+    for x in vals:
+      if isinstance(x, basestring):
+        inserts += "'{}', ".format(x.replace("'", ""))
+      else:
+        inserts += "{}, ".format(x) # numbers
+    sql += "('{}', {}),".format(fn, inserts[:-2])
+    
+  sql = sql[:-1] + '\n;'
 
   # Save file
   with open('output.sql', 'w') as f:
     f.write(sql)
 
 if __name__ == '__main__':
-  analyze()
+  build_analysis()
