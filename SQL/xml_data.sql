@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS xml_files
   nominal_defocus_max DECIMAL,
   calibrated_magnification DECIMAL,
   specimen_holder_model VARCHAR,
+  average_exposure_units VARCHAR,
   average_exposure_time DECIMAL,
   electron_exposure_unit VARCHAR,
   electron_exposure DECIMAL,
@@ -38,10 +39,10 @@ CREATE TABLE IF NOT EXISTS xml_files
   refinement_program_version DECIMAL,
   Refinement_type VARCHAR,
   map_size INT,
-  voxel_density_min INT,
-  voxel_density_max INT,
-  voxel_density_avg INT,
-  voxel_density_std INT
+  voxel_density_min DECIMAL,
+  voxel_density_max DECIMAL,
+  voxel_density_avg DECIMAL,
+  voxel_density_std DECIMAL
   
 );
 
