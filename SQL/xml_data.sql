@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS xml_files
   calibrated_magnification DECIMAL,
   specimen_holder_model VARCHAR,
   average_exposure_time DECIMAL,
+  electron_exposure_unit VARCHAR,
   electron_exposure DECIMAL,
   CTF_estimation_program VARCHAR,
   CTF_estimation_program_version DECIMAL,
