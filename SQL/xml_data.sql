@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS xml_files
   grid_material VARCHAR,
   grid_mesh INT,
   Microscope VARCHAR,
+  electron_source VARCHAR,
   Acceleration_voltage INT,
   illumination VARCHAR,
   imaging_mode VARCHAR,
