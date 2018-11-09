@@ -18,8 +18,12 @@ def get_list_of_search_terms():
     ['average_exposure_time', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'image_recording_list', 'image_recording', 'average_exposure_time', '#text']],
     ['electron_exposure', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'image_recording_list', 'image_recording', 'average_electron_dose_per_image', '#text']],
     ['Resolution', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'resolution', '#text']],
+    ['resolution_est_method', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'resolution_method']],
     ['map_size', ['emd', 'map', 'dimensions', 'col']],
+    ['map_size', ['emd', 'map', 'pixel_spacing', 'x', '#text']],
     ['voxel_density_min', ['emd', 'map', 'statistics', 'minimum']],
+    ['CTF_estimation_program', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'ctf_correction', 'software_list', 'software', 'name']],
+    ['CTF_estimation_program_version', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'ctf_correction', 'software_list', 'software', 'version']],
     ['voxel_density_max', ['emd', 'map', 'statistics', 'maximum']],
     ['voxel_density_avg', ['emd', 'map', 'statistics', 'average']],
     ['voxel_density_std', ['emd', 'map', 'statistics', 'std']],
@@ -34,7 +38,6 @@ def get_list_of_search_terms():
   #  ['Vitrobot', ['emd', 'structure_determination_list', 'structure_determination', 'specimen_preparation_list', 'single_particle_preparation', 'vitrification', 'instrument']],
   
     #   Microscopy
-#    ['resolution_est_method', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'resolution_method']],
     # Programs - refinement
  #   ['refinement_program', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'software_list', 'software', 'name']],
 #    ['refinement_program_version', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'software_list', 'software', 'version']],
@@ -47,8 +50,6 @@ def get_list_of_search_terms():
 #    ['average_exposure_units', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'image_recording_list', 'image_recording', 'average_exposure_time', '@units']],
 #    ['electron_exposure_units', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'image_recording_list', 'image_recording', 'average_electron_dose_per_image', '@units']],
     # Programs - CTF estimation
-#    ['CTF_estimation_program', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'ctf_correction', 'software_list', 'software', 'name']],
- #   ['CTF_estimation_program_version', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'ctf_correction', 'software_list', 'software', 'version']],
     # Symmetry
 #    ['threeD_classification_classes', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'number_classes_used']],
   #  ['symmetry_point_group', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'applied_symmetry', 'point_group']],

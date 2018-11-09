@@ -20,8 +20,12 @@ CREATE TABLE IF NOT EXISTS xml_files
   nominal_defocus_max DECIMAL,
   average_exposure_time DECIMAL,
   electron_exposure DECIMAL,
-  Resolution DECIMAL,
+  resolution DECIMAL,
+  resolution_est_method VARCHAR,
   map_size INT,
+  pixel_spacing DECIMAL,
+  ctf_program VARCHAR,
+  ctf_program_version DECIMAL,
   voxel_density_min DECIMAL,
   voxel_density_max DECIMAL,
   voxel_density_avg DECIMAL,
@@ -32,3 +36,5 @@ CREATE TABLE IF NOT EXISTS xml_files
 CREATE INDEX cryo_name on xml_files (filename);
 
 INSERT INTO xml_files VALUES
+
+SELECT * from xml_files;
