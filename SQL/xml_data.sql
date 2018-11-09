@@ -37,4 +37,3 @@ CREATE INDEX cryo_name on xml_files (filename);
 
 INSERT INTO xml_files VALUES
 
-SELECT * from xml_files;

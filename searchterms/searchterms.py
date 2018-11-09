@@ -20,7 +20,7 @@ def get_list_of_search_terms():
     ['Resolution', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'resolution', '#text']],
     ['resolution_est_method', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'resolution_method']],
     ['map_size', ['emd', 'map', 'dimensions', 'col']],
-    ['map_size', ['emd', 'map', 'pixel_spacing', 'x', '#text']],
+    ['pixel_spacing', ['emd', 'map', 'pixel_spacing', 'x', '#text']],
     ['voxel_density_min', ['emd', 'map', 'statistics', 'minimum']],
     ['CTF_estimation_program', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'ctf_correction', 'software_list', 'software', 'name']],
     ['CTF_estimation_program_version', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'ctf_correction', 'software_list', 'software', 'version']],
