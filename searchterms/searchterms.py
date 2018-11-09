@@ -10,6 +10,9 @@ def get_list_of_search_terms():
     ['grid_mesh', ['emd', 'structure_determination_list', 'structure_determination', 'specimen_preparation_list', 'single_particle_preparation', 'grid', 'mesh']],
     ['Microscope', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'microscope']],
     ['Accelereation_voltage', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'acceleration_voltage', '#text']],
+    ['Illumination', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'illumination_mode']],
+    ['Imaging_mode', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'imaging_mode']],
+    ['detector', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'image_recording_list', 'image_recording', 'film_or_detector_model', '#text']],
     ['nominal_defocus_min', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'nominal_defocus_min', '#text']],
     ['nominal_defocus_max', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'nominal_defocus_max', '#text']],
     ['average_exposure_time', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'image_recording_list', 'image_recording', 'average_exposure_time', '#text']],
@@ -40,7 +43,6 @@ def get_list_of_search_terms():
  #   ['calibrated_magnification', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'calibrated_magnification']],
  #   ['specimen_holder_model', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'specimen_holder_model']],
     # Image recording
-#    ['detector', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'image_recording_list', 'image_recording', 'film_or_detector_model']],
 #    ['detector_mode', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'image_recording_list', 'image_recording', 'detector_mode']],
 #    ['average_exposure_units', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'image_recording_list', 'image_recording', 'average_exposure_time', '@units']],
 #    ['electron_exposure_units', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'image_recording_list', 'image_recording', 'average_electron_dose_per_image', '@units']],
@@ -50,6 +52,4 @@ def get_list_of_search_terms():
     # Symmetry
 #    ['threeD_classification_classes', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'number_classes_used']],
   #  ['symmetry_point_group', ['emd', 'structure_determination_list', 'structure_determination', 'singleparticle_processing', 'final_reconstruction', 'applied_symmetry', 'point_group']],
-  #  ['Illumination', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'illumination_mode']],
- #   ['Imaging_mode', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'imaging_mode']],
  #   ['Electron_Source', ['emd', 'structure_determination_list', 'structure_determination', 'microscopy_list', 'single_particle_microscopy', 'electron_source']],
