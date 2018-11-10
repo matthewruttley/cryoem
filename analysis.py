@@ -19,14 +19,21 @@ import os
 
 import xmltodict
 
-from searchterms import searchterms
-
-useful_fields=searchterms.get_list_of_search_terms()
+from searchterms.searchterms import useful_fields 
 
 def get_value(d, path, f):
+  """
+    Takes the path and iterates over it.
+  """
   try:
     if len(path) == 1:
-      return d[path[0]]
+      if len(d[path[0]]) == 2:
+        try:
+          return d[path[0]].items()[1][1] # This captures the detector mode for some weird xml files.
+        except AttributeError:
+          pass
+      else:
+        return d[path[0]]
     else:
       return get_value(d[path[0]], path[1:], f)
   except TypeError:
@@ -37,7 +44,7 @@ def build_analysis():
   
   xml_data = {}
   
-  for fn in os.listdir('XML'):
+  for fn in os.listdir('XML/'):
     if 'swp' not in fn:
       with open('XML/' + fn) as f:
         contents = xmltodict.parse(f.read())
@@ -47,7 +54,7 @@ def build_analysis():
           try:
             values.append(get_value(contents, path, f))
           except KeyError, TypeError:
-            values.append("NULL") 
+            values.append(str('NULL')) 
         xml_data[fn] = values
   
   # Convert to SQL
