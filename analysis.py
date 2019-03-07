@@ -19,32 +19,42 @@ import os
 
 import xmltodict
 
-useful_fields = [
-  ['admin_date', ['emd', 'admin', 'current_status', 'date']],
-  # Add cols to pick out here
-]
+from searchterms.searchterms import useful_fields 
 
-def get_value(d, path):
-  if len(path) == 1:
-    return d[path[0]]
-  else:
-    return get_value(d[path[0]], path[1:])
-
+def get_value(d, path, f):
+  """
+    Takes the path and iterates over it.
+  """
+  try:
+    if len(path) == 1:
+      if len(d[path[0]]) == 2:
+        try:
+          return d[path[0]].items()[1][1] # This captures the detector mode for some weird xml files.
+        except AttributeError:
+          pass
+      else:
+        return d[path[0]]
+    else:
+      return get_value(d[path[0]], path[1:], f)
+  except TypeError:
+    pass
 
 def build_analysis():
   """handler"""
   
   xml_data = {}
   
-  for fn in os.listdir('XML'):
-    if 'v30' in fn:
+  for fn in os.listdir('XML/'):
+    if 'swp' not in fn:
       with open('XML/' + fn) as f:
         contents = xmltodict.parse(f.read())
 
         values = []
         for col_name, path in useful_fields:
-          values.append(get_value(contents, path))
-
+          try:
+            values.append(get_value(contents, path, f))
+          except KeyError, TypeError:
+            values.append(str('NULL')) 
         xml_data[fn] = values
   
   # Convert to SQL
@@ -56,10 +66,13 @@ def build_analysis():
     # Hackish implementation here:
     inserts = ""
     for x in vals:
-      if isinstance(x, basestring):
-        inserts += "'{}', ".format(x.replace("'", ""))
-      else:
-        inserts += "{}, ".format(x) # numbers
+      try:
+        if isinstance(x, basestring):
+          inserts += "'{}', ".format(x.replace("'", ""))
+        else:
+          inserts += "{}, ".format(x) # numbers
+      except UnicodeEncodeError:
+        pass
     sql += "('{}', {}),".format(fn, inserts[:-2])
     
   sql = sql[:-1] + '\n;'
